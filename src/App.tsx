@@ -1,3 +1,16 @@
-export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
-}
+import React from "react";
+import { TaskProvider } from "./context/TaskContext";
+import TaskApp from "./components/Task/TaskApp";
+import { ModalProvider } from "./context/ModalContext";
+
+const App: React.FC = () => {
+  return (
+    <TaskProvider>
+      <ModalProvider>
+        <TaskApp />
+      </ModalProvider>
+    </TaskProvider>
+  );
+};
+
+export default App;
